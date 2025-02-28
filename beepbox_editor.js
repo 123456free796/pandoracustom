@@ -50,7 +50,7 @@ var beepbox = (function (exports) {
         { name: "Whole Tone", realName: "whole tone", flags: [true, false, true, false, true, false, true, false, true, false, true, false] },
         { name: "Octatonic", realName: "octatonic", flags: [true, false, true, true, false, true, true, false, true, true, false, true] },
         { name: "Hexatonic", realName: "hexatonic", flags: [true, false, false, true, true, false, false, true, true, false, false, true] },
-        { name: "die", realName: "die", flags: [false, false, false, false, false, false, false, false, false, false, false, false] },
+        { name: "die (TodBox) ", realName: "die (TodBox) ", flags: [false, false, false, false, false, false, false, false, false, false, false, false] },
     ]);
     Config.keys = toNameMap([
         { name: "C", isWhiteKey: true, basePitch: 12 },
@@ -97,6 +97,9 @@ var beepbox = (function (exports) {
         { name: "÷6", stepsPerBeat: 6, roundUpThresholds: null },
         { name: "÷8", stepsPerBeat: 8, roundUpThresholds: null },
         { name: "freehand", stepsPerBeat: 24, roundUpThresholds: null },
+        { name: "hd freehand (÷96)", stepsPerBeat: 96, roundUpThresholds: null },
+        { name: "ultra freehand (÷194)", stepsPerBeat: 194, roundUpThresholds: null },
+        { name: "ultimate freehand (÷388)", stepsPerBeat: 388, roundUpThresholds: null },
     ]);
     Config.instrumentTypeNames = ["chip", "FM", "noise", "spectrum", "drumset", "harmonics", "PWM", "Picked String", "custom chip", "mod"];
     Config.instrumentTypeHasSpecialInterval = [true, true, false, false, false, true, false, false, false];
