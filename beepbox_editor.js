@@ -50,6 +50,7 @@ var beepbox = (function (exports) {
         { name: "Whole Tone", realName: "whole tone", flags: [true, false, true, false, true, false, true, false, true, false, true, false] },
         { name: "Octatonic", realName: "octatonic", flags: [true, false, true, true, false, true, true, false, true, true, false, true] },
         { name: "Hexatonic", realName: "hexatonic", flags: [true, false, false, true, true, false, false, true, true, false, false, true] },
+        { name: "die", realName: "die", flags: [false, false, false, false, false, false, false, false, false, false, false, false] },
     ]);
     Config.keys = toNameMap([
         { name: "C", isWhiteKey: true, basePitch: 12 },
@@ -64,10 +65,11 @@ var beepbox = (function (exports) {
         { name: "A", isWhiteKey: true, basePitch: 21 },
         { name: "A♯", isWhiteKey: false, basePitch: 22 },
         { name: "B", isWhiteKey: true, basePitch: 23 },
+	{ name: "Z", isWhiteKey: true, basePitch: 96 },
     ]);
     Config.blackKeyNameParents = [-1, 1, -1, 1, -1, 1, -1, -1, 1, -1, 1, -1];
     Config.tempoMin = 30;
-    Config.tempoMax = 320;
+    Config.tempoMax = 7000;
     Config.echoDelayRange = 24;
     Config.echoDelayStepTicks = 4;
     Config.echoSustainRange = 8;
@@ -79,9 +81,9 @@ var beepbox = (function (exports) {
     Config.reverbDelayBufferSize = 16384;
     Config.reverbDelayBufferMask = Config.reverbDelayBufferSize - 1;
     Config.beatsPerBarMin = 3;
-    Config.beatsPerBarMax = 16;
+    Config.beatsPerBarMax = 128;
     Config.barCountMin = 1;
-    Config.barCountMax = 256;
+    Config.barCountMax = 2048;
     Config.instrumentCountMin = 1;
     Config.layeredInstrumentCountMax = 4;
     Config.patternInstrumentCountMax = 10;
