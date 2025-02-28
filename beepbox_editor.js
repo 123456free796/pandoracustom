@@ -62,8 +62,7 @@ var beepbox = (function (exports) {
         { name: "G♯", isWhiteKey: false, basePitch: 20 },
         { name: "A", isWhiteKey: true, basePitch: 21 },
         { name: "A♯", isWhiteKey: false, basePitch: 22 },
-        { name: "B", isWhiteKey: true, basePitch: 23 },
-	{ name: "X", isWhiteKey: true, basePitch: 0 },
+        { name: "B", isWhiteKey: true, basePitch: 23 }
     ]);
     Config.blackKeyNameParents = [-1, 1, -1, 1, -1, 1, -1, -1, 1, -1, 1, -1];
     Config.tempoMin = 30;
@@ -243,7 +242,7 @@ var beepbox = (function (exports) {
 	{ name: "error", voices: 2, spread: 9.5, offset: 0.0, expression: 1.0, sign: 1.3},
 	{ name: "this sounds so bad", voices: 2, spread: -5.0, offset: -0.5, expression: 1.0, sign: -5.0 },
         { name: "fourths", voices: 2, spread: 4.0, offset: 4.0, expression: 0.95, sign: 1.0 },
-        { name: "FART", voices: 2, spread: 13, offset: -5, expression: 1.0, sign: -3 },
+        { name: "FART", voices: 2, spread: 13, offset: -5, expression: 1.0, sign: -3 }
     ]);
     Config.effectNames = ["reverb", "chorus", "panning", "distortion", "bitcrusher", "note filter", "echo", "pitch shift", "detune", "vibrato", "transition type", "chord type"];
     Config.effectOrder = [10, 11, 7, 8, 9, 5, 3, 4, 2, 1, 6, 0];
