@@ -49,9 +49,7 @@ var beepbox = (function (exports) {
         { name: "Minor Pentatonic", realName: "minor pentatonic", flags: [true, false, false, true, false, true, false, true, false, false, true, false] },
         { name: "Whole Tone", realName: "whole tone", flags: [true, false, true, false, true, false, true, false, true, false, true, false] },
         { name: "Octatonic", realName: "octatonic", flags: [true, false, true, true, false, true, true, false, true, true, false, true] },
-        { name: "Hexatonic", realName: "hexatonic", flags: [true, false, false, true, true, false, false, true, true, false, false, true] },
-        { name: "die (TodBox) ", realName: "die (TodBox) ", flags: [false, false, false, false, false, false, false, false, false] },
-    ]);
+        { name: "Hexatonic", realName: "hexatonic", flags: [true, false, false, true, true, false, false, true, true, false, false, true] }
     Config.keys = toNameMap([
         { name: "C", isWhiteKey: true, basePitch: 12 },
         { name: "C♯", isWhiteKey: false, basePitch: 13 },
@@ -65,7 +63,7 @@ var beepbox = (function (exports) {
         { name: "A", isWhiteKey: true, basePitch: 21 },
         { name: "A♯", isWhiteKey: false, basePitch: 22 },
         { name: "B", isWhiteKey: true, basePitch: 23 },
-	{ name: "Z", isWhiteKey: true, basePitch: 96 },
+	{ name: "X", isWhiteKey: true, basePitch: 0 },
     ]);
     Config.blackKeyNameParents = [-1, 1, -1, 1, -1, 1, -1, -1, 1, -1, 1, -1];
     Config.tempoMin = 30;
@@ -100,6 +98,8 @@ var beepbox = (function (exports) {
         { name: "hd freehand (÷96)", stepsPerBeat: 96, roundUpThresholds: null },
         { name: "ultra freehand (÷194)", stepsPerBeat: 194, roundUpThresholds: null },
         { name: "ultimate freehand (÷388)", stepsPerBeat: 388, roundUpThresholds: null },
+        { name: "super ultimate freehand / soft freehand (÷3880)", stepsPerBeat: 3880, roundUpThresholds: null },
+
     ]);
     Config.instrumentTypeNames = ["chip", "FM", "noise", "spectrum", "drumset", "harmonics", "PWM", "Picked String", "custom chip", "mod"];
     Config.instrumentTypeHasSpecialInterval = [true, true, false, false, false, true, false, false, false];
@@ -237,7 +237,13 @@ var beepbox = (function (exports) {
         { name: "octave", voices: 2, spread: 6.0, offset: 6.0, expression: 0.8, sign: 1.0 },
         { name: "bowed", voices: 2, spread: 0.02, offset: 0.0, expression: 1.0, sign: -1.0 },
         { name: "piano", voices: 2, spread: 0.01, offset: 0.0, expression: 1.0, sign: 0.7 },
-        { name: "warbled", voices: 2, spread: 0.25, offset: 0.05, expression: 0.9, sign: -0.8 },
+        { name: "warbled", voices: 2, spread: 0.25, offset: 0.05, expression: 0.9, sign: -0.8}, 
+	{ name: "corrupt", voices: 2, spread: 18.00, offset: 48.0, expression: 0.7, sign: 0.7},
+	{ name: "alternate fifth", voices: 2, spread: 2.5, offset: -2.5, expression: 0.9, sign: 0.9},
+	{ name: "error", voices: 2, spread: 9.5, offset: 0.0, expression: 1.0, sign: 1.3},
+	{ name: "this sounds so bad", voices: 2, spread: -5.0, offset: -0.5, expression: 1.0, sign: -5.0 },
+        { name: "fourths", voices: 2, spread: 4.0, offset: 4.0, expression: 0.95, sign: 1.0 },
+        { name: "FART", voices: 2, spread: 13, offset: -5, expression: 1.0, sign: -3 },
     ]);
     Config.effectNames = ["reverb", "chorus", "panning", "distortion", "bitcrusher", "note filter", "echo", "pitch shift", "detune", "vibrato", "transition type", "chord type"];
     Config.effectOrder = [10, 11, 7, 8, 9, 5, 3, 4, 2, 1, 6, 0];
@@ -768,8 +774,8 @@ var beepbox = (function (exports) {
             return null;
         }
     }
-    EditorConfig.version = "3.4";
-    EditorConfig.versionDisplayName = "PaandorasBox " + EditorConfig.version;
+    EditorConfig.version = "3.5-CUSTOM";
+    EditorConfig.versionDisplayName = "PaandorasCustomBox " + EditorConfig.version;
     EditorConfig.releaseNotesURL = "https://jummbus.bitbucket.io/patch_notes/" + EditorConfig.version + ".html";
     EditorConfig.isOnMac = /^Mac/i.test(navigator.platform) || /Mac OS X/i.test(navigator.userAgent) || /^(iPhone|iPad|iPod)/i.test(navigator.platform) || /(iPhone|iPad|iPod)/i.test(navigator.userAgent);
     EditorConfig.ctrlSymbol = EditorConfig.isOnMac ? "⌘" : "Ctrl+";
