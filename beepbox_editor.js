@@ -153,9 +153,9 @@ var beepbox = (function (exports) {
 		{ name: "marimba", expression: 2.0, isSampled: true, isPercussion: false, extraSampleDetune: -15.5, samples: centerWave(marimbasample) }, 
 		{ name: "susdotwav", expression: 2.0, isSampled: true, isPercussion: false, extraSampleDetune: -24.5, samples: centerWave(susdotwavsample) },
 		{ name: "wackyboxtts", expression: 2.0, isSampled: true, isPercussion: false, extraSampleDetune: -17.5, samples: centerWave(wackyboxttssample) }, 
-		{ name: "peppersteak_1", expression: 2.0, isSampled: true, isPercussion: false, extraSampleDetune: -42.2, samples: centerWave(peppersteak1) }, 
-		{ name: "peppersteak_2", expression: 2.0, isSampled: true, isPercussion: false, extraSampleDetune: -47, samples: centerWave(peppersteak2) },
-		{ name: "vinyl_noise", expression: 2.0, isSampled: true, isPercussion: true, extraSampleDetune: -50, samples: centerWave(vinyl) },
+		{ name: "Pepper Steak 1", expression: 2.0, isSampled: true, isPercussion: false, extraSampleDetune: -42.2, samples: centerWave(peppersteak1) }, 
+		{ name: "Pepper Steak 2", expression: 2.0, isSampled: true, isPercussion: false, extraSampleDetune: -47, samples: centerWave(peppersteak2) },
+		{ name: "TV Noise", expression: 2.0, isSampled: true, isPercussion: true, extraSampleDetune: -50, samples: centerWave(vinyl) },
 	]);
 	Config.newWaves = toNameMap([
 		{ name: "sine", expression: 0.88, isSampled: false, samples: centerAndNormalizeWave([8.0, 9.0, 11.0, 12.0, 13.0, 14.0, 15.0, 15.0, 15.0, 15.0, 14.0, 14.0, 13.0, 11.0, 10.0, 9.0, 7.0, 6.0, 4.0, 3.0, 2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 2.0, 4.0, 5.0, 6.0]) },
@@ -349,13 +349,13 @@ var beepbox = (function (exports) {
     Config.pulseWidthRange = 50;
     Config.pulseWidthStepPower = 0.5;
     Config.pitchChannelCountMin = 1;
-    Config.pitchChannelCountMax = 40;
+    Config.pitchChannelCountMax = 60;
     Config.noiseChannelCountMin = 0;
-    Config.noiseChannelCountMax = 16;
+    Config.noiseChannelCountMax = 60;
     Config.modChannelCountMin = 0;
-    Config.modChannelCountMax = 12;
+    Config.modChannelCountMax = 60;
     Config.noiseInterval = 6;
-    Config.pitchesPerOctave = 12;
+    Config.pitchesPerOctave = 24;
     Config.drumCount = 12;
     Config.pitchOctaves = 8;
     Config.modCount = 6;
@@ -783,7 +783,7 @@ var beepbox = (function (exports) {
                 { name: "custom chip", customType: 8 },
             ])
         },
-		{ name: "Sampled Instruments", presets: toNameMap([
+		{ name: "Paandora's Box Instruments", presets: toNameMap([
                 { name: "Earthbound O. Guitar", midiProgram: 80, settings: { "type": "chip", "eqFilter": [], "effects": [], "transition": "normal", "fadeInSeconds": 0, "fadeOutTicks": -1, "chord": "arpeggio", "wave": "overdrive", "unison": "none", "envelopes": [] } },
 				{ name: "Earthbound Piano", midiProgram: 80, settings: { "type": "chip", "eqFilter": [], "effects": [], "transition": "normal", "fadeInSeconds": 0, "fadeOutTicks": -1, "chord": "arpeggio", "wave": "piano1", "unison": "none", "envelopes": [] } },
 				{ name: "Zunpet", midiProgram: 80, settings: { "type": "chip", "eqFilter": [], "effects": [], "transition": "normal", "fadeInSeconds": 0, "fadeOutTicks": -1, "chord": "arpeggio", "wave": "trumpet", "unison": "none", "envelopes": [] } },
@@ -803,7 +803,7 @@ var beepbox = (function (exports) {
 	{ name: "Liver Pad", midiProgram: 80, settings: { "type": "chip", "eqFilter": [], "effects": [], "transition": "normal", "fadeInSeconds": 0, "fadeOutTicks": -1, "chord": "arpeggio", "wave": "liver pad", "unison": "none", "envelopes": [] } },
 	{ name: "Sus.wav", midiProgram: 80, settings: { "type": "chip", "eqFilter": [], "effects": [], "transition": "normal", "fadeInSeconds": 0, "fadeOutTicks": -1, "chord": "arpeggio", "wave": "susdotwav", "unison": "none", "envelopes": [] } },
         ]) },
-		{ name: "Sampled Drums", presets: toNameMap([
+		{ name: "Paandora's Box Drums", presets: toNameMap([
 				{ name: "Retro Kick", midiProgram: 80, settings: { "type": "chip", "eqFilter": [], "effects": [], "transition": "normal", "fadeInSeconds": 0, "fadeOutTicks": -1, "chord": "arpeggio", "wave": "kick", "unison": "none", "envelopes": [] } },
 				{ name: "Retro Snare", midiProgram: 80, settings: { "type": "chip", "eqFilter": [], "effects": [], "transition": "normal", "fadeInSeconds": 0, "fadeOutTicks": -1, "chord": "arpeggio", "wave": "snare", "unison": "none", "envelopes": [] } },
 				{ name: "Sonic 1 Snare", midiProgram: 80, settings: { "type": "chip", "eqFilter": [], "effects": [], "transition": "normal", "fadeInSeconds": 0, "fadeOutTicks": -1, "chord": "arpeggio", "wave": "sonic3snare", "unison": "none", "envelopes": [] } },
@@ -816,7 +816,7 @@ var beepbox = (function (exports) {
 				{ name: "Looped Cymbal", midiProgram: 80, settings: { "type": "chip", "eqFilter": [], "effects": [], "transition": "normal", "fadeInSeconds": 0, "fadeOutTicks": -1, "chord": "arpeggio", "wave": "loopingcymbal", "unison": "none", "envelopes": [] } },
 				{ name: "Amen Break", midiProgram: 80, settings: { "type": "chip", "eqFilter": [], "effects": [], "transition": "normal", "fadeInSeconds": 0, "fadeOutTicks": -1, "chord": "arpeggio", "wave": "amen break", "unison": "none", "envelopes": [] } },
         ]) },
-		{ name: "Sampled Sound Effects", presets: toNameMap([
+		{ name: "Paandora's Box Sound Effects", presets: toNameMap([
 				{ name: "Earthbound WOW", midiProgram: 80, settings: { "type": "chip", "eqFilter": [], "effects": [], "transition": "normal", "fadeInSeconds": 0, "fadeOutTicks": -1, "chord": "arpeggio", "wave": "WOW", "unison": "none", "envelopes": [] } },
 				{ name: "Sonic 3 COME ON", midiProgram: 80, settings: { "type": "chip", "eqFilter": [], "effects": [], "transition": "normal", "fadeInSeconds": 0, "fadeOutTicks": -1, "chord": "arpeggio", "wave": "come on", "unison": "none", "envelopes": [] } },
 				{ name: "Tim Allen Grunt", midiProgram: 80, settings: { "type": "chip", "eqFilter": [], "effects": [], "transition": "normal", "fadeInSeconds": 0, "fadeOutTicks": -1, "chord": "arpeggio", "wave": "tim allen grunt", "unison": "none", "envelopes": [] } },
